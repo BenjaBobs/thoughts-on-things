@@ -6,13 +6,36 @@ something about the motivation
 
 describe some data types and how to "define" data
 
+When talking about modelling we're gonna have to talk about data, so for the purposes of this writeup this will be the nomenclature.
+
+I'm going to refer to basic types such as 
+
+- `number` - `5` for example
+- `text` - any kind of text such as `"this is a text"`
+- `timestamp` - a date and a time
+- `ref` - 
+
 # Example Model
 
-scenario
-- architecture company maybe
-- sells house
-- need a website for picking house parts for customizing houses
-- house = frame + 1 door + 1 window
+So in this scenario, imagine that we're going to be designing a solution for assigning school grades for students in a school.
+We'll need to be able to describe courses as well as students.
+
+So maybe a course will look something like this:
+```gql
+Course {
+  id: text
+  name: text
+}
+```
+
+And we could describe a student as
+```gql
+Student {
+  id: text
+  name: text
+  age: number
+}
+```
 
 # Adapting to Changes
 
