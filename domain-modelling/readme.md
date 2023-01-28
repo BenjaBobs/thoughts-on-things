@@ -51,17 +51,17 @@ With this we could setup the following scenario:
 ### Student
 |id|name|age|
 |-|-|-|
-|12|John Doe|16|
+|`12`|`"John Doe"`|`16`|
 
 ### Course
 |id|name|
 |-|-|
-|5|english|
+|`5`|`"English"`|
 
 ### Enrolment
 |id|Student|Course|
 |-|-|-|
-|1|12|5|
+|`1`|`12`|`5`|
 
 # Adapting to Changes
 
