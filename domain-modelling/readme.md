@@ -32,59 +32,56 @@ E.g.
 Course {
   id: number
   teacher: string
-  classes: number
   subject: string
+  classes: number
   topics: [string]
 }
 ```
 
 with that we could describe a `Course` of math consisting of twelve classes like so:
-|id|teacher|classes|subject|topics|
+|id|teacher|subject|classes|topics|
 |-|-|-|-|-|
-|`1`|`"Mrs Doubtfire"`|`12`|`"Math"`|`["arithmetic", "geometry", "algebra"]`|
+|`1`|`"Mrs Doubtfire"`|`"Math"`|`3`|`["arithmetic", "geometry", "algebra"]`|
 
-So maybe a very bare bones model of a course will look something like this:
+Alternatively, we can split out the classes and topics like so:
 ```gql
 Course {
   id: number
-  name: text
+  teacher: string
+  subject: string
 }
-```
 
-And we could describe a student as
-```gql
-Student {
+Class {
   id: number
-  name: text
-  age: number
+  courseId: number
+  topic: string
 }
 ```
 
-And for starters, let's say the way we describe students enrolling to classes is like so:
-```gql
-Enrolment {
-  id: number
-  Student: ref
-  Course: ref
-}
-```
-
-With this we could describe a scenario where John is taking an English course:
-
-### Student
-|id|name|age|
-|-|-|-|
-|`12`|`"John Doe"`|`16`|
+This way we could represent it in data like so:
 
 ### Course
-|id|name|
-|-|-|
-|`5`|`"English"`|
 
-### Enrolment
-|id|Student|Course|
+|id|teacher|subject|
 |-|-|-|
-|`1`|`12`|`5`|
+|`1`|`"Mrs Doubtfire"`|`"Math"`|
+
+### Classes
+
+|id|courseId|topic|
+|-|-|-|
+|`1`|`1`|`"arithmetic"`|
+|`2`|`1`|`"geometry"`|
+|`3`|`1`|`"algebra"`|
+
+In this scenario we have three classes each as their own entity, and then referencing the course we defined.
+
+So what's the difference between the two representations?
+Why would you choose one over another?
+The answer is that it depends.
+The first representation is faster to get working, and more focused on the `Course`.
+If the system doesn't require any deeper information about the classes, it's 
+
 
 # Adapting to Changes
 
