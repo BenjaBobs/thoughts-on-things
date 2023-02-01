@@ -12,12 +12,36 @@ I'm going to refer to basic types such as
 
 - `number` - `5` for example
 - `text` - any kind of text such as `"this is a text"`
-- `timestamp` - a date and a time
+- `[]` - a list of things, e.g. a list of numbers: `[1, 2, 3]`
+- `{}` - a composite type, e.g. `Circle { x: number, y: number, radius: number }`
+- `#` - comments for things
 
 # Example Model
 
 So in this scenario, imagine that we're going to be designing a solution for assigning school grades for students in a school.
 We'll need to be able to describe courses as well as students.
+
+So let's start with a course.
+In order to be able to describe it, we need to really think about what it is.
+So maybe a we could say a course is a set of classes about a specific subject, tought by a teacher.
+Each class might have a specific topic of the day.
+
+There are many ways to go about this, but one way is to model a course as something self-contained.
+E.g.
+```gql
+Course {
+  id: number
+  teacher: string
+  classes: number
+  subject: string
+  topics: [string]
+}
+```
+
+with that we could describe a `Course` of math consisting of twelve classes like so:
+|id|teacher|classes|subject|topics|
+|-|-|-|-|-|
+|`1`|`"Mrs Doubtfire"`|`12`|`"Math"`|`["arithmetic", "geometry", "algebra"]`|
 
 So maybe a very bare bones model of a course will look something like this:
 ```gql
@@ -61,8 +85,6 @@ With this we could describe a scenario where John is taking an English course:
 |id|Student|Course|
 |-|-|-|
 |`1`|`12`|`5`|
-
-
 
 # Adapting to Changes
 
