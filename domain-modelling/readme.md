@@ -31,10 +31,10 @@ E.g.
 ```gql
 Course {
   id: number
-  teacher: string
-  subject: string
+  teacher: text
+  subject: text
   classes: number
-  topics: [string]
+  topics: [text]
 }
 ```
 
@@ -47,14 +47,14 @@ Alternatively, we can split out the classes and topics like so:
 ```gql
 Course {
   id: number
-  teacher: string
-  subject: string
+  teacher: text
+  subject: text
 }
 
 Class {
   id: number
   courseId: number
-  topic: string
+  topic: text
 }
 ```
 
