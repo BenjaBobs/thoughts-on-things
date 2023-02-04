@@ -39,6 +39,9 @@ Course {
 ```
 
 with that we could describe a `Course` of math consisting of twelve classes like so:
+
+### Courses
+
 |id|teacher|subject|classes|topics|
 |-|-|-|-|-|
 |`1`|`"Mrs Doubtfire"`|`"Math"`|`3`|`["arithmetic", "geometry", "algebra"]`|
@@ -60,7 +63,7 @@ Class {
 
 This way we could represent it in data like so:
 
-### Course
+### Courses
 
 |id|teacher|subject|
 |-|-|-|
