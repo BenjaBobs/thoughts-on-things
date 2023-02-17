@@ -83,8 +83,43 @@ So what's the difference between the two representations?
 Why would you choose one over another?
 The answer is that it depends.
 The first representation is faster to get working, and more focused on the `Course`.
-If the system doesn't require any deeper information about the classes, it's 
+If the system doesn't require any deeper information about the classes, spending time modelling, creating and maintaining systems around greater details might result in both wasted time and effort.
+On the other hand, let's say the teachers also want to be able to describe which materials (books, papers, etc) the students will need for each class.
+Then they'd need to be able to do that if the model supports describing individual classes.
 
+Let's expand this scenario a little and add a model to describe students.
+In this scenario, the school system needs to be able to describe students.
+
+```gql
+Course {
+  id: number
+  teacher: text
+  subject: text
+}
+
+Class {
+  id: number
+  courseId: number
+  topic: text
+}
+
+Student {
+  id: number
+  name: text
+}
+```
+
+And we also need a way describe which courses a student takes, so let's add enrollments.
+
+```gql
+Enrollment {
+  id: number
+  courseId: number
+  studentId: number
+}
+```
+
+Now we can describe 
 
 # Adapting to Changes
 
