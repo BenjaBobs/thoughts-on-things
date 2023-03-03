@@ -119,7 +119,35 @@ Enrollment {
 }
 ```
 
-Now we can describe 
+Now we can describe students taking classes like so:
+
+### Courses
+
+|id|teacher|subject|
+|-|-|-|
+|`1`|`"Mrs Doubtfire"`|`"Math"`|
+
+### Classes
+
+|id|courseId|topic|
+|-|-|-|
+|`1`|`1`|`"arithmetic"`|
+|`2`|`1`|`"geometry"`|
+|`3`|`1`|`"algebra"`|
+
+### Students
+
+|id|name|
+|-|-|
+|`1`|`"Student McStudentface"`|
+
+### Enrollments
+
+|id|courseId|studentId|
+|-|-|-|
+|`1`|`1`|`1`|
+
+So this describes that student `1` (Student McStudentface) takes course `1` (Math).
 
 # Adapting to Changes
 
