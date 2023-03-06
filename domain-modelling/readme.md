@@ -1,6 +1,10 @@
 # Domain Modelling
 
-_something about the motivation_
+One motivation for domain modelling is to ensure that everyone involved in a project is on the same page when it comes to understanding the domain (i.e., the subject matter or problem space) being addressed by the project.
+By creating a shared language for talking about the domain, domain modelling can help prevent misunderstandings and miscommunications between team members.
+
+Another motivation for domain modelling is to facilitate the creation of a well-designed software system.
+By modelling the domain before beginning visual design or writing code, designers and developers can gain a better understanding of the requirements of the system and the relationships between the various components of the system. This can help ensure that the system is both functional and maintainable.
 
 # Talking About Data
 
@@ -157,8 +161,6 @@ scenario addition
 
 # Balancing Hypothetical and Current Needs
 
-_something about how much to do / not to do considerations about potential future needs_
-
 So with all that said, too much modelling increase development viscosity.
 Having to use time and effort saving and manipulating data that isn't used will hurt productivity.
 
@@ -168,3 +170,11 @@ Striking the balance between theorizing future needs and current needs takes pra
 I find that at the very least, the domain should represent
 - The data models of each entity
 - Actions that transform the data
+
+To strike a balance between these two extremes, it can be helpful to focus on the needs of the current project while keeping an eye on potential future needs. When modelling the domain, it can be useful to ask yourself questions like:
+
+- What are the core entities and relationships that are required for the current project?
+- What entities and relationships are likely to be needed in the near future?
+- What entities and relationships are less certain but could be needed further down the line?
+
+By focusing on the needs of the current project while keeping an eye on potential future needs, you can create a domain model that is both functional and flexible.
